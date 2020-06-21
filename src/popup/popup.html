@@ -3,22 +3,96 @@
   <head>
     <meta charset="utf-8">
     <style>
+      body {
+        background-color: #f9f9fa;
+      }
       #popup-content {
         padding: 10px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        font-family: Helvetica, Arial, sans-serif;
       }
-      .button-all {
-        padding: 5px 20px;
+
+      h2 {
+        margin: 0;
+        font-size: 16px;
+        text-align: center;
+      }
+
+      .div-all, .div-page {
+        float: left;
+        width: 52px;
+      }
+
+      input[type=checkbox]{
+        height: 0;
+        width: 0;
+        visibility: hidden;
+      }
+
+      label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 40px;
+        height: 20px;
+        background: grey;
+        display: block;
+        border-radius: 40px;
+        position: relative;
+      }
+
+      label:after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 16px;
+        height: 16px;
+        background: #fff;
+        border-radius: 16px;
+        transition: 0.3s;
+      }
+
+      input:checked + label {
+        background: #9ebe34;
+      }
+
+      input:checked + label:after {
+        left: calc(100% - 2px);
+        transform: translateX(-100%);
+      }
+
+      label:active:after {
+        width: 30px;
+      }
+
+      span {
+        display: flex;
+        height: 35px;
+        justify-content: center;
+        align-items: flex-end;
+        float: left;
+        padding-left: 5px;
+        font-size: 14px;
       }
     </style>
   </head>
   <body>
     <div id="popup-content">
-      <p>Set grayscale:</p>
+      <h2>Set grayscale:</h2>
       <div>
-        <button id="ToggleAll" class="button-all">For All Sites</button>
+        <div class="div-all">
+          <input type="checkbox" id="ToggleAll"/><label for="ToggleAll">For All Sites</label> 
+        </div>
+        <span>For All Sites</span>
       </div>
       <div>
-        <button id="ToggleSite" class="button-current">For All Sites</button>
+        <div class="div-page">
+          <input type="checkbox" id="TogglePage" /><label for="TogglePage">For This Page</label>
+        </div>
+        <span>For This Site</span>
       </div>
     </div>
     <script type="module" src="popup.js"></script>
