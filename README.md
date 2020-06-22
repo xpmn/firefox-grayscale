@@ -1,4 +1,4 @@
-# Grayscale Browsing
+# Grayscale Bro
 
 A minimal Firefox extension for monochrome browsing.
 

@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Grayscale Browse",
+  "name": "Grayscale Bro",
   "version": "0.1.0",
   "description": "Grayscale browsing",
   "homepage_url": "https://github.com/rewkha/firefox-grayscale",
@@ -19,7 +19,7 @@
       "size": 19
     }],
     "default_popup": "popup/popup.html",
-    "default_title": "Grayscale Browse"
+    "default_title": "Grayscale Bro"
   },
   "content_scripts": [
     {
