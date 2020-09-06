@@ -1,10 +1,14 @@
 function setFilter(value) {
-    document.body.style.filter = value;
+  document.body.style.filter = value;
 }
 
 function handleFilter() {
   browser.storage.local.get().then((store) => {
     if (store.allSites) {
+      if (store.exclude && store.exclude.length) {
+        const founded = store.exclude.find(element => element === window.location.hostname);
+        if (founded) return setFilter('');
+      }
       setFilter('grayscale(1) sepia(0.1)');
       return;
     }
