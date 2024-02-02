@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Grayscale Bro",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Grayscale browsing",
   "homepage_url": "https://github.com/rewkha/firefox-grayscale",
   "icons": {
