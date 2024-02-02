@@ -1,5 +1,15 @@
+const existingFilter = getComputedStyle(document.body).filter.replace('none', '');
+
 function setFilter(value) {
-  document.body.style.filter = value;
+  if (value === '') {
+    document.body.style.filter = existingFilter;
+    return;
+  }
+
+  const restOfTheFilters = existingFilter
+    .replace(/grayscale\([\d\.]+\)/, '').replace(/sepia\([\d\.]+\)/, '') // Remove grayscale and sepia filters
+    .replace(/\s+/g, ' ').trim(); // Remove extra spaces
+  document.body.style.filter = [restOfTheFilters, value].join(' ');
 }
 
 function handleFilter() {
